@@ -1,0 +1,9 @@
+sudo: required
+services:
+  - docker
+
+before_install:
+  - docker build -t olasupoodebiyi/docker-react -f Dockerfile.dev .
+
+script:
+  - docker run olasupoodebiyi/docker-react yarn test -- --coverage
